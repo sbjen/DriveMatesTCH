@@ -51,6 +51,7 @@ contract CarpoolContract {
     }
 
     function withdrawPayment() public {
+
         require(passengers[msg.sender], "No payment to withdraw");
 
         uint256 payment = rides[msg.sender].price;

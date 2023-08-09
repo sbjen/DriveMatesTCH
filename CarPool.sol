@@ -32,8 +32,7 @@ contract CarpoolContract {
             driver: msg.sender,
             destination: _destination,
             price: _price,
-            isAvailable: true
-        });
+            isAvailable: true });
 
         emit RideRegistered(msg.sender,_boarding, _destination, _price);
     }

@@ -32,8 +32,7 @@ contract CarpoolContract {
             driver: msg.sender,
             destination: _destination,
             price: _price,
-            isAvailable: true
-        });
+            isAvailable: true });
 
         emit RideRegistered(msg.sender,_boarding, _destination, _price);
     }
@@ -51,6 +50,7 @@ contract CarpoolContract {
     }
 
     function withdrawPayment() public {
+
         require(passengers[msg.sender], "No payment to withdraw");
 
         uint256 payment = rides[msg.sender].price;

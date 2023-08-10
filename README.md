@@ -4,3 +4,5 @@ Peer-to-peer carpooling using blockchain is a decentralized system where individ
 # Setting Up development environment for smart contract
 - using ganach for local development network
 - using truffle for smart contractor write and test
+- using metamask configured with ganache development network and account
+  

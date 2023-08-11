@@ -5,11 +5,10 @@ import projImg4 from "../assets/images/artur-aldyrkhanov-tC0g72uns0M-unsplash.jp
 import projImg5 from "../assets/images/kylie-paz-aml-5TDo2_k-unsplash.jpg";
 import projImg6 from "../assets/images/signIn.jpg";
 
-
-import React from 'react'
-import { Container, Row, Col } from "react-bootstrap";
-import '../stylesheet/home.css'
-import CardButton from '../components/clickables/CardButton/CardButton'
+import React from "react";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import "../stylesheet/home.css";
+import CardButton from "../components/clickables/CardButton/CardButton";
 
 const Home = () => {
   const projects = [
@@ -20,12 +19,14 @@ const Home = () => {
     },
     {
       title: "Student Benefits",
-      description: "We can't help you with coursework, but with a valid ID, your travel is made easy.",
+      description:
+        "We can't help you with coursework, but with a valid ID, your travel is made easy.",
       imgUrl: projImg2,
     },
     {
       title: "Maximum Security",
-      description: "Blockchain Technology ensures maximum data privacy for our users.",
+      description:
+        "Blockchain Technology ensures maximum data privacy for our users.",
       imgUrl: projImg3,
     },
   ];
@@ -38,7 +39,8 @@ const Home = () => {
     },
     {
       title: "Spacious",
-      description: "..or not, if you're a party of 2. Our vehicles comfortably fit any number of people.",
+      description:
+        "..or not, if you're a party of 2. Our vehicles comfortably fit any number of people.",
       imgUrl: projImg5,
     },
     {
@@ -48,38 +50,29 @@ const Home = () => {
     },
   ];
 
-
-
-
   return (
     <Container fluid className="Home d-flex justify-content-center">
-    <Container>
-    <Row className="align-horizontal-centre">
-                        {
-                          projects.map((project, index) => {
-                            return (
-                              <Col md={4}>
-                                <a href="gogle.com">
+      <Container>
+        <Row className="align-horizontal-centre">
+          {projects.map((project, index) => {
+            return (
+              <Col md={4}>
+                <a href="gogle.com">
+                  <CardButton key={index} {...project} />
+                </a>
+              </Col>
+            );
+          })}
+        </Row>
+        <Row>
+          <a href="http://localhost:3000/donate"> <Button>Donate Us</Button> </a>
+          
+        </Row>
 
-                                <CardButton
-                                key={index}
-                                {...project}
-                                />
 
-                                </a>
-                              
-                              </Col>
-                            
-                            
-                            )
-                          })
-                        }
-                      </Row>
-
+      </Container>
     </Container>
-
-  </Container>
   );
-}
+};
 
-export default Home
+export default Home;

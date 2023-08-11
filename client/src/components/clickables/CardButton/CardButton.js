@@ -1,6 +1,5 @@
 import { Col } from "react-bootstrap";
-import './cardbutton.css'
-
+import "./cardbutton.css";
 
 const ProjectCard = ({ title, description, imgUrl }) => {
   return (
@@ -13,7 +12,7 @@ const ProjectCard = ({ title, description, imgUrl }) => {
         </div>
       </div>
     </Col>
-  )
-}
+  );
+};
 
 export default ProjectCard;

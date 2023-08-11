@@ -1,0 +1,8 @@
+backed 
+
+create client server folder
+
+server:
+
+initializw npm init 
+npm install express cors nodemon socket.io

@@ -1,13 +1,115 @@
 # P2P-Car-Pooling
-Peer-to-peer carpooling using blockchain is a decentralized system where individuals directly connect to share rides. Blockchain ensures secure, transparent transactions and trustless verification, enabling seamless payment and ride arrangements without intermediaries
+## Inovative solution for car pooling
+
+<!--[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)-->
+
+<!--[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)-->
+
+The P2P Blockchain Carpooling dApp revolutionizes urban transportation by harnessing the power of blockchain technology. This innovative decentralized application facilitates ride-sharing among individuals
+
+## Features
 
 
-## Technology Used
-- ReactJs (for frontEnd)
-- - Socket.io
-  -  
+- users can register themself
+- user can register only one time by a address
+- registered user can book ride that is call for car sharing 
+- registered user can view all available rides 
+- user can withdraw payment 
 
--expressJs
 
--Truffle
--Solidity 
+
+
+> The overriding design goal for Markdown's
+> formatting syntax is to make it as readable
+> as possible. The idea is that a
+> Markdown-formatted document should be
+> publishable as-is, as plain text, without
+> looking like it's been marked up with tags
+> or formatting instructions.
+
+
+
+## Tech Used
+
+Tools and Technology Used:
+
+- [NodeJs][link_node] - Node.js is a runtime environment that lets you run JavaScript on servers, enabling fast and scalable applications.
+- [Express][link_express] -minimalistic web framework for Node.js, simplifying web app development with efficient routing and middleware.
+- [MongoDB][link_mongo] -flexible NoSQL database, ideal for handling various data types with its document-oriented approach.
+- [Socket.io][link_socket] - Socket.IO provides real-time, bidirectional communication between clients and servers, enhancing interactive web experiences.
+- [React][link_react] - React is a JavaScript library for building dynamic user interfaces, making UI development efficient and engaging.
+- [Truffle][link_truffle] -  Truffle is an Ethereum development framework, aiding in creating, deploying, and testing smart contracts.
+- [Solidity][link_solidity] - Solidity is a language for Ethereum smart contracts, allowing the creation of self-executing, decentralized applications.
+- [Ganache][link_ganache] - Ganache is a personal Ethereum blockchain for testing and development, simulating the Ethereum network locally.
+- [MetaMask][link_metamask] - MetaMask is a browser extension enabling secure interaction with Ethereum applications directly from your browser.
+
+
+## Installation
+
+Project requires [Node.js](https://nodejs.org/) v18+ to run.
+
+Install the frontend dependencies in client forder
+
+```sh
+cd client
+npm start
+```
+
+Install the backend dependencies in client forder
+
+```sh
+npm init -y
+npm install express cors nodemon socket.io
+
+```
+
+For smart Contract Testing and deployment install dependencies in smart-contract folder
+
+Download [Ganache] [link_ganache_download] & Metamask extension
+set Workspace in ganache and Integrate it with Metamask
+
+```sh
+cd smart-contract
+npm install -g truffle 
+truffle init
+or 
+npm install --save-dev @nomicfoundation/hardhat-toolbox 
+
+```
+
+<!--## Plugins-->
+
+<!--Dillinger is currently extended with the following plugins.-->
+<!--Instructions on how to use them in your own application are linked below.-->
+
+<!--| Plugin | README |-->
+<!--| ------ | ------ |-->
+<!--| Dropbox | [plugins/dropbox/README.md][PlDb] |-->
+<!--| GitHub | [plugins/github/README.md][PlGh] |-->
+<!--| Google Drive | [plugins/googledrive/README.md][PlGd] |-->
+<!--| OneDrive | [plugins/onedrive/README.md][PlOd] |-->
+<!--| Medium | [plugins/medium/README.md][PlMe] |-->
+<!--| Google Analytics | [plugins/googleanalytics/README.md][PlGa] |-->
+
+
+
+## License
+sb7
+
+**VISIT ME ON** 
+-  [Poertfolio Website][link_portfolio]
+-  [Link Tree][link_tree]
+
+
+[link_node]: <http://nodejs.org>
+[link_express]: <http://expressjs.com>
+[link_mongo]:<>
+[link_socket]: <>
+[link_react]:<>
+[link_truffle]:<> 
+[link_solidity]:<>
+[link_ganache]:<>
+[link_metamask]:<>
+[link_ganache_download]: <https://trufflesuite.com/ganache/>
+[link_portfolio]:<>
+[link_tree]:<>

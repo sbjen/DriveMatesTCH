@@ -4,4 +4,10 @@ Peer-to-peer carpooling using blockchain is a decentralized system where individ
 
 ## Technology Used
 - ReactJs (for frontEnd)
-- - fsdf
+- - Socket.io
+  -  
+
+-expressJs
+
+-Truffle
+-- Solidity 

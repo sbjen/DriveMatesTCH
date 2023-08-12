@@ -1,0 +1,2 @@
+* users can register themself
+* user can register only one time by a address

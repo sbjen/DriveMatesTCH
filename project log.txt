@@ -6,3 +6,41 @@ server:
 
 initializw npm init 
 npm install express cors nodemon socket.io(in backend need to install it in frontend also)
+
+
+make other folder install package 
+npm install --save-dev @nomicfoundation/hardhat-toolbox
+or (if above notworks) 
+npm install --save-dev @nomicfoundation/hardhat-toolbox @nomicfoundation/hardhat-network-helpers @nomicfoundation/hardhat-chai-matchers @nomiclabs/hardhat-ethers @nomiclabs/hardhat-etherscan chai ethers hardhat-gas-reporter solidity-coverage @typechain/hardhat typechain @typechain/ethers-v5 @ethersproject/abi @ethersproject/providers
+
+
+
+
+  let instance;
+  let owner;
+
+  before(async () => {
+    instance = await CarpoolContract.deployed(); // Deploy the contract before tests
+  });
+
+
+  before
+  it("owner match check", async () => {
+    // will return contract instance
+    // const carpoolContract = await CarpoolContract.deployed();
+
+    const owner = instance.getOwner();
+    assert.equal(await owner, accounts[0], "owner dismatch error");
+
+    assert.equal(
+      await instance.getUserName(accounts[0]),
+      "Brajendra Suman",
+      "dismatch in 1st owner"
+    );
+
+  });
+
+  it("--------- owner name should match ----------", async () => {
+
+    console.log(owner);
+  });

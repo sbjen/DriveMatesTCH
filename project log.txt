@@ -1,6 +1,15 @@
 backed 
 
 create client server folder
+- add web3
+- will use react context api or redux for state management
+- will use redux as it provides facility for past traveling that means back
+use web3 or etherium to interact with deployed smart contract to do that we need a interface(metamask) that connects dApp to smart contract deplyed on local ganach
+-- npm install --save ethers
+
+why i decided web3.js  https://www.blockchain-council.org/web-3/web3-js-vs-ethers-js/#:~:text=Both%20of%20these%20frameworks%20have,they%20are%20trying%20to%20build.
+
+
 
 server:
 

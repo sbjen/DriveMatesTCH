@@ -1,5 +1,291 @@
-.align-horizontal-centre{
+.align-horizontal-centre {
   justify-content: center;
   align-items: center;
   place-items: center;
+}
+
+.navbar {
+  position: fixed !important;
+  transition: all 0.3s ease-out 0s !important;
+  padding: 0.3rem 2rem !important;
+  font-size: 1.2rem !important;
+  background-color: #020c2a;
+  opacity: 0.87;
+}
+
+.navbar-toggler {
+  position: relative !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+.navbar-toggler span {
+  display: block !important;
+  background-color: #7500fa !important;
+  height: 4px !important;
+  width: 27px !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  transform: rotate(0deg) !important;
+  left: 0 !important;
+  opacity: 1 !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: 0 !important;
+}
+
+.navbar-toggler span:nth-child(1),
+.navbar-toggler span:nth-child(3) {
+  transition: transform 0.35s ease-in-out !important;
+  transition: transform 0.35s ease-in-out !important;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(1) {
+  position: absolute !important;
+  left: 12px !important;
+  top: 10px !important;
+  transform: rotate(135deg) !important;
+  opacity: 0.9 !important;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+  height: 12px !important;
+  visibility: hidden !important;
+  background-color: transparent !important;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+  position: absolute !important;
+  left: 12px !important;
+  top: 10px !important;
+  transform: rotate(-135deg) !important;
+  opacity: 0.9 !important;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    padding: 1rem 2rem !important;
+    font-size: 1.4rem !important;
+    background-color: #181a27 !important;
+  }
+  .navbar-nav .nav-item a::after {
+    display: none !important;
+  }
+}
+.navbar-brand {
+  color: rgb(250, 250, 250) !important;
+}
+
+.logo {
+  height: 2em !important;
+  width: 3.5em !important;
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+}
+
+.nav-link {
+  padding: 0.8rem 1rem !important;
+}
+
+@media (max-width: 767px) {
+  .nav-link {
+    padding: 0.7rem 1rem !important;
+  }
+}
+
+.navbar-nav .nav-item {
+  position: relative;
+  margin-left: 20px;
+}
+
+.navbar-nav .nav-item a {
+  font-weight: 400;
+  transition: all 0.3s ease-out 0s;
+  position: relative;
+  z-index: 1;
+}
+
+.navbar-nav .nav-item a::after {
+  content: "";
+  position: relative;
+  display: block;
+  height: 5px;
+  width: 0;
+  border-radius: 16px;
+  background: #6e00fd;
+  bottom: 1px;
+  left: 0;
+  z-index: -1;
+  transition: all 0.3s ease-out 0s;
+}
+
+.navbar-nav .nav-item a:hover::after {
+  width: 100%;
+}
+
+#no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Reset default margin and padding for body */
+body {
+  margin: 0;
+  padding: 0;
+}
+.opacity-gradient {
+  width: 100vw; /* Occupy full viewport width */
+  height: auto; /* Maintain aspect ratio */
+  position: relative;
+
+  /* Apply the linear opacity gradient */
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    transparent,
+    transparent,
+    rgba(0, 0, 0, 0.5)
+  );
+  background-size: 100% 100%; /* Adjust background-size to cover entire image */
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Reset default margin and padding for body */
+
+/* Container to center the image vertically */
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Set the container's height to full viewport height */
+  overflow: hidden; /* Hide overflow to avoid scrolling */
+}
+
+body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+html {
+  --section-background-color: linear-gradient(
+    to bottom left,
+    /* rgb(51, 62, 177), rgb(0, 0, 0)
+       */ rgb(5, 8, 40),
+    rgb(5, 9, 51)
+  );
+
+  --image-gradient: linear-gradient(
+    to bottom left,
+    /* rgba(5, 8, 40, 0.9), rgba(1, 4, 39, 0.925) */ rgba(5, 7, 40, 0.87),
+    rgba(5, 7, 39, 0.9)
+  );
+
+  --imp-text-color: #7500fa;
+  --imp-bold-text-color: #7500fa;
+}
+
+.Home {
+  width: 100vw;
+
+  position: relative;
+
+  /* will change it */
+
+  background-image: var(--image-gradient);
+  color: aliceblue;
+
+  color: aliceblue;
+  /* text-align: center;
+    vertical-align: middle;
+    align-items: center; */
+}
+
+.gradient-box {
+
+  width: 100vw;
+padding: 20px;
+  background: 
+    linear-gradient(to top, transparent, rgba(0, 0, 0, 0.5)),
+    linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5)),
+    linear-gradient(to right, transparent, rgba(0, 0, 0, 0.5)),
+    linear-gradient(to left, transparent, rgba(0, 0, 0, 0.5));
+  border-radius: 15px; /* Rounded corners */
+  margin: 50px auto; /* Center the box */
+}
+
+/* @media (max-width: 768px) {
+  .gradient-box {
+
+    height: 50vh;
+  }
+} */
+
+.button1{
+  background: none;
+  color: #41822f;
+  border:2px solid;
+  padding: 1em 2em;
+  font-size: 1em;
+  transition: color 0.25s;
+  border-color:0.25s;
+
+  box-shadow: 0.25s;
+  transform: 0.25s;
+}
+
+.button1:hover{
+  border-color: #f1ff5c;
+  color: white;
+  box-shadow:0 0,5em 0.5em -0.4em #f1ff5c;
+  transform: translate Y(-0.25em);
+  cursor: pointer;
+}
+
+.button2{
+  border-radius: 5px;
+  margin:50px;
+  background: none;
+  color: #5D35A3;
+  border:2px solid;
+  padding: 1em 2em;
+  font-size: 1em;
+  transition: color 0.25s;
+  border-color:0.25s;
+  box-shadow: 0.25s;
+  transform: 0.25s;
+}
+.button2:hover{
+  border-color: #D38FF8;
+  color: white;
+  box-shadow:0 0,5em 0.5em -0.4em #D38FF8;
+  transform: translate Y(-0.25em);
+  cursor: pointer;
+}
+
+.button-connect-wallet{
+  border-radius: 80px;
+  /* margin:50px; */
+  background: none;
+  color: #d01919;
+  border:2px solid;
+  padding: 1em 2em;
+  font-size: 1em;
+  transition: color 0.25s;
+  border-color:0.25s;
+  box-shadow: 0.25s;
+  transform: 0.25s;
+  width: 40vw;
+}
+.button-connect-wallet:hover{
+  border-color: #D38FF8;
+  color: white;
+  box-shadow:0 0,5em 0.5em -0.4em #D38FF8;
+  transform: translate Y(-0.25em);
+  cursor: pointer;
 }

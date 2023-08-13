@@ -5,10 +5,7 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
-
 import Home from "./pages/Home";
-import Navbar from "./components/Navbar/Navbar";
 
 import Register from "./pages/Login";
 import Login from "./pages/Register";
@@ -17,15 +14,18 @@ import Login from "./pages/Register";
 // import Contacts from './pages/Contact'
 
 import Preloader from "./components/PreLoader";
-import ScrollToTop from "./components/ScrollToTop";
+// import ScrollToTop from "./components/ScrollToTop";
 
 // import logo from './logo.svg';
 import "./App.css";
-import "../src/stylesheet/app.css";
+import "./style.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import Smallbutton from "./components/clickables/Button";
+// import Smallbutton from "./components/clickables/Button";
 import Donate from "./pages/Donate";
+import { Provider } from "react-redux";
+import store  from "./redux/store.js"
+
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -39,12 +39,15 @@ function App() {
   }, []);
 
   return (
+    <Provider store = {store}>
+
+    
     <Router>
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/donate" element={<Donate/>} />
+          <Route path="/donate" element={<Donate />} />
 
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
@@ -53,6 +56,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </Provider>
   );
 }
 

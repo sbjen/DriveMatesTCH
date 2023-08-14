@@ -1,4 +1,0 @@
-export {connectWallet} from "./Actions"
-
-
-

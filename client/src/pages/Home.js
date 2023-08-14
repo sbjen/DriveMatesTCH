@@ -1,12 +1,12 @@
 import Web3 from "web3";
 import { ethers } from "ethers";
+import { CONTRACT_ADDRESS,ABICODE } from "../assets/constants";
 import { useEffect, useState } from "react";
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import CardButton from "../components/clickables/CardButton/CardButton";
 import NavBar from "../components/Navbar/Navbar";
 import "../style.css";
-import CaroiselTag from "../components/clickables/CaroiselTag";
 import Blockchain from "../components/lottieComponents/blockchain1";
 import Smallbutton from "../components/clickables/ButtonElement";
 import projImg1 from "../assets/images/jenny-ueberberg-v_1k3vRX4kg-unsplash.jpg";
@@ -15,35 +15,39 @@ import projImg3 from "../assets/images/dan-nelson-ah-HeguOe9k-unsplash.jpg";
 import projImg4 from "../assets/images/artur-aldyrkhanov-tC0g72uns0M-unsplash.jpg";
 import projImg5 from "../assets/images/kylie-paz-aml-5TDo2_k-unsplash.jpg";
 import projImg6 from "../assets/images/signIn.jpg";
+import { Contract } from "web3";
 const { ethereum } = window;
 
 
 
-
-
-
 let account = null;
-
-
-
-async function connectToWallet() {
-  try {
-    console.log("fkjsdfnaskfdnkj,s");
-    if (await window.ethereum) {
-      var web3 = await new Web3(window.ethereum);
-      await window.ethereum.send("eth_requestAccounts");
-      var accounts = await web3.eth.getAccounts();
-      var account = accounts[0];
-      console.log(account);
-
-    }
-  } catch {}
-}
-
-
-
+let accounts;
+let userName = "";
 
 const Home = () => {
+  const [address, setAddress] = useState("wallet not connected ");
+  async function connectToWallet() {
+    try {
+      console.log("fkjsdfnaskfdnkj,s");
+      if (account != null) {
+        account = accounts[0];
+        setAddress(account);
+        console.log(account);
+      } else if (window.ethereum) {
+        var web3 = await new Web3(window.ethereum);
+        await window.ethereum.send("eth_requestAccounts");
+        accounts = await web3.eth.getAccounts();
+        account = accounts[0];
+        console.log(account);
+
+        let contract = await new web3.eth.Contract(ABICODE, CONTRACT_ADDRESS);
+        userName =   String(await contract.methods.getUserName(account));
+        console.log(userName)
+
+      }
+    } catch {}
+  }
+
   const projects = [
     {
       title: "Female Drivers",
@@ -99,17 +103,28 @@ const Home = () => {
         <Row>
           <NavBar></NavBar>
         </Row>
-        <Row style={{ paddingTop: "200px" }}></Row>
-        
-          {" "}
-          <Smallbutton 
-            insideText={"CONNECT TO WALLET"}
-            onClick={connectToWallet}
-            buttonType={account==null? "button-connect-wallet" : "button2"} 
-            disbles = {account==null?false:true}
-          ></Smallbutton>
-        
-        
+        <Row style={{ paddingTop: "200px" }}></Row>{" "}
+        <Smallbutton
+          insideText={
+            account == null ? "CONNECT TO WALLET" : "connected with: " + account
+          }
+          onClick={connectToWallet}
+          buttonType={account == null ? "button-connect-wallet" : "button2"}
+          disabled={account == null ? false : true}
+        ></Smallbutton>
+        {account == null ? (
+          <div></div>
+        ) : (
+          <div>
+            <p>If not Registered to Commnunity </p>
+
+            <Smallbutton insideText={"Registger Here"} buttonType={"button2"}>
+              {"     "}
+              Register Here{"    "}
+            </Smallbutton>
+            <span> {userName} </span>
+          </div>
+        )}
         <Row style={{ paddingTop: "200px" }}>
           <Col md={6}>
             <Blockchain></Blockchain>
@@ -120,12 +135,7 @@ const Home = () => {
         </Row>
       </Container>
       <h1>Our Services</h1>
-      {/* <Container>
-      <div  >
-      <CaroiselTag  ></CaroiselTag>
-      </div>
 
-      </Container> */}
 
       <Container fluid d-flex>
         <Row

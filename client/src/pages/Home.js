@@ -78,18 +78,18 @@ const Home = () => {
     {
       title: "Well-Equipped Navigation System",
       description: "To ensure you reach your destinations on time.",
-      imgUrl: imgWomanDrive,
+      imgUrl: imgTech,
     },
     {
       title: "Spacious",
       description:
         "..or not, if you're a party of 2. Our vehicles comfortably fit any number of people.",
-      imgUrl: projImg5,
+      imgUrl: imgTech,
     },
     {
       title: "Well-Maintained",
       description: "Comfortable rides on the worst of roads are ensured.",
-      imgUrl: projImg4,
+      imgUrl: imgTech,
     },
   ];
 

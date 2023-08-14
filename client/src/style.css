@@ -247,9 +247,9 @@ padding: 20px;
   cursor: pointer;
 }
 
-.button2{
-  border-radius: 5px;
-  margin:50px;
+.log-in-btn{
+  border-radius: 50px;
+  margin:20px;
   background: none;
   color: #5D35A3;
   border:2px solid;
@@ -259,8 +259,9 @@ padding: 20px;
   border-color:0.25s;
   box-shadow: 0.25s;
   transform: 0.25s;
+  width:300px;
 }
-.button2:hover{
+.log-in-btn:hover{
   border-color: #D38FF8;
   color: white;
   box-shadow:0 0,5em 0.5em -0.4em #D38FF8;
@@ -288,4 +289,10 @@ padding: 20px;
   box-shadow:0 0,5em 0.5em -0.4em #D38FF8;
   transform: translate Y(-0.25em);
   cursor: pointer;
+}
+
+.home-about-body {
+  padding-top: 50px;
+  font-size: 1.2em !important;
+  text-align: left;
 }

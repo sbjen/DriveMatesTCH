@@ -43,6 +43,9 @@
   opacity: 0;
   width: 100%;
 }
+.card-img {
+  object-fit: contain;
+}
 
 .proj-txtx h4 {
   color: #f1eee5;
@@ -58,4 +61,16 @@
   font-weight: 400;
   font-size: 15px;
   letter-spacing: 0.8px;
+}
+
+.home-services {
+  margin-top: 60px;
+}
+
+.highlight {
+  color: #6304e0;
+}
+
+b {
+  color: #6304e0;
 }

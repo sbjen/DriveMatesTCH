@@ -25,14 +25,16 @@ const getWalletConnection = () => {
     signer,
     TransactionContext
   });
-};
-
+  };
+  
 
 // will provide access to data
-export const TransactionProvider = ({ childern }) => {
+export const TransactionProvider = ({ childerns }) => {
   return (
-    <TransactionContext.Provider value={{ value: "Test Value-----------" }}>
-      {childern}
+    <TransactionContext.Provider>
+      
+      {childerns}
+
     </TransactionContext.Provider>
   );
 };

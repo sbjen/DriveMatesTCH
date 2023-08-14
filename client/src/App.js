@@ -9,7 +9,6 @@ import Home from "./pages/Home";
 import Register from "./pages/Login";
 import Login from "./pages/Register";
 
-
 import Preloader from "./components/PreLoader";
 import "./App.css";
 import "./style.css";
@@ -29,13 +28,9 @@ function App() {
   }, []);
 
   return (
-    
-   
-
-
     <Router>
       <Preloader load={load} />
-      
+
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -48,9 +43,6 @@ function App() {
         </Routes>
       </div>
     </Router>
-  
-
-   
   );
 }
 

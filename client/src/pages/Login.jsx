@@ -7,7 +7,7 @@ const SkillPage = () => {
       {/* <Particle /> */}
       <Container>
         <h4 className="project-heading">
-          Technical Skills and interest <strong className="yellow"></strong>
+          Login page <strong className="yellow"></strong>
         </h4>
         <br />
       </Container>

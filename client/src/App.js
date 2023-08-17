@@ -6,8 +6,8 @@ import {
   Navigate,
 } from "react-router-dom";
 import Home from "./pages/Home";
-import Register from "./pages/Login";
-import Login from "./pages/Register";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 import Preloader from "./components/PreLoader";
 import "./App.css";

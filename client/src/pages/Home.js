@@ -3,6 +3,8 @@ import { ethers } from "ethers";
 import { CONTRACT_ADDRESS, ABICODE } from "../assets/constants";
 import { useEffect, useState } from "react";
 import React from "react";
+import { Link } from "react-router-dom";
+
 import { Container, Row, Col, Button } from "react-bootstrap";
 import CardButton from "../components/clickables/CardButton/CardButton";
 import NavBar from "../components/Navbar/Navbar";
@@ -14,10 +16,11 @@ import imgTech from "../assets/imae/imageTech.jpg";
 import imgWomanDrive from "../assets/imae/womanDrive.jpg";
 import { Contract } from "web3";
 const { ethereum } = window;
-
 let account = null;
 let accounts;
 let userName = "";
+
+
 
 const Home = () => {
   const [address, setAddress] = useState("wallet not connected ");
@@ -161,22 +164,26 @@ const Home = () => {
                 <Row c>
                   <Col>
                     {account == null ? (
-                      <Smallbutton
-                        insideText={"LOGIN"}
-                        // onClick={connectToWallet}
-                        buttonType={"log-in-btn"}
-                      ></Smallbutton>
+                      <Link to="/login">
+                        <Smallbutton
+                          insideText={"LOGIN"}
+                          // onClick={navigateToLogin}
+                          buttonType={"log-in-btn"}
+                        ></Smallbutton>
+                      </Link>
                     ) : (
                       <></>
                     )}
                   </Col>
                   <Col>
                     {account == null ? (
-                      <Smallbutton
-                        insideText={"REGISTER"}
-                        // onClick={connectToWallet}
-                        buttonType={"log-in-btn"}
-                      ></Smallbutton>
+                      <Link to="register">
+                        <Smallbutton
+                          insideText={"REGISTER"}
+                          // onClick={connectToWallet}
+                          buttonType={"log-in-btn"}
+                        ></Smallbutton>
+                      </Link>
                     ) : (
                       <></>
                     )}

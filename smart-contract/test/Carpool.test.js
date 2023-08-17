@@ -44,8 +44,6 @@ contract("CarpoolContract", (accounts) => {
     // await console.log(
     //   `-----totalUsers-----${await instance.getTotalUsers()}------`
     // );
-
-
   });
 
   it("---------lOGIN CHECK ACCOUNT SHOUKD BE FLAGED----------", async () => {
@@ -86,7 +84,6 @@ contract("CarpoolContract", (accounts) => {
 
     const owner = instance.getOwner();
     assert.equal(await owner, accounts[0], "owner account dismatch error");
-    
 
     assert.equal(
       await instance.getUserName(accounts[0]),
@@ -230,11 +227,4 @@ contract("CarpoolContract", (accounts) => {
       "dismatch in 1st owner"
     );
   });
-
-
-
-
-
-
-  
 });

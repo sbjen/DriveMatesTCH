@@ -24,20 +24,7 @@ function LoginPage() {
   );
   const [dots, setDots] = useState("");
 
-  //   useEffect(() => {
-  //     // Set a timeout to hide the message after 60 seconds
-  //     const timeoutId = setTimeout(() => {
-  //       setIsVisible(false);
-  //     }, 60000);
-  //
-  //     const intervalId = setInterval(() => {
-  //       if (dots.length < 4) {
-  //         setDots(dots + ".");
-  //       } else {
-  //         setDots("");
-  //       }
-  //     }, 500);
-  //   }, [dots]);
+
 
   const [userFound, setUserFound] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -100,10 +87,10 @@ function LoginPage() {
                 class="text-center p-4"
                 style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
               >
-                © 2021 Copyright:
-                <a class="text-reset fw-bold" href="https://mdbootstrap.com/">
+                @ Wallet Address: {accounts[0]}
+                {/* <a class="text-reset fw-bold" href="https://mdbootstrap.com/">
                   MDBootstrap.com
-                </a>
+                </a> */}
               </div>
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"

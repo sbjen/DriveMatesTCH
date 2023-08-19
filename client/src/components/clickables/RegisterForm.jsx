@@ -201,6 +201,7 @@ function RegisterForm() {
                     id="flexCheckDefault"
                     labelClass="text-white mb-4"
                     label="I do accept the Terms and Conditions of your site."
+                    
                   />
                   <MDBBtn color="light" size="lg">
                     Register

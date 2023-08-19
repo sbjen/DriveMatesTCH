@@ -28,6 +28,7 @@ function App() {
   }, []);
 
   return (
+    <div className="app-background-color">
     <Router>
       <Preloader load={load} />
 
@@ -43,6 +44,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </div>
   );
 }
 

@@ -205,13 +205,42 @@ html {
     vertical-align: middle;
     align-items: center; */
 }
+.Login-page {
+  width: 100vw;
+
+  min-height: 100vh;
+
+  position: relative;
+
+  /* will change it */
+
+  background-image: var(--image-gradient);
+  color: aliceblue;
+
+  color: aliceblue;
+  /* text-align: center;
+    vertical-align: middle;
+    align-items: center; */
+}
+.app-background-color {
+  position: relative;
+  min-height: 100vh;
+
+  /* will change it */
+
+  background-image: var(--image-gradient);
+  color: aliceblue;
+
+  color: aliceblue;
+  /* text-align: center;
+    vertical-align: middle;
+    align-items: center; */
+}
 
 .gradient-box {
-
   width: 100vw;
-padding: 20px;
-  background: 
-    linear-gradient(to top, transparent, rgba(0, 0, 0, 0.5)),
+  padding: 20px;
+  background: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.5)),
     linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5)),
     linear-gradient(to right, transparent, rgba(0, 0, 0, 0.5)),
     linear-gradient(to left, transparent, rgba(0, 0, 0, 0.5));
@@ -226,67 +255,68 @@ padding: 20px;
   }
 } */
 
-.button1{
+.button1 {
   background: none;
   color: #41822f;
-  border:2px solid;
+  border: 2px solid;
   padding: 1em 2em;
   font-size: 1em;
   transition: color 0.25s;
-  border-color:0.25s;
+  border-color: 0.25s;
 
   box-shadow: 0.25s;
   transform: 0.25s;
 }
 
-.button1:hover{
+.button1:hover {
   border-color: #f1ff5c;
   color: white;
-  box-shadow:0 0,5em 0.5em -0.4em #f1ff5c;
+  box-shadow: 0 0, 5em 0.5em -0.4em #f1ff5c;
   transform: translate Y(-0.25em);
   cursor: pointer;
 }
 
-.log-in-btn{
+
+.log-in-btn {
   border-radius: 50px;
-  margin:20px;
+  margin: 20px;
   background: none;
-  color: #5D35A3;
-  border:2px solid;
+  color: #5d35a3;
+  border: 2px solid;
   padding: 1em 2em;
   font-size: 1em;
   transition: color 0.25s;
-  border-color:0.25s;
+  border-color: 0.25s;
   box-shadow: 0.25s;
   transform: 0.25s;
-  width:300px;
+  width: 300px;
 }
-.log-in-btn:hover{
-  border-color: #D38FF8;
+.log-in-btn:hover {
+  border-color: #d38ff8;
   color: white;
-  box-shadow:0 0,5em 0.5em -0.4em #D38FF8;
+  box-shadow: 0 0, 5em 0.5em -0.4em #d38ff8;
   transform: translate Y(-0.25em);
   cursor: pointer;
 }
 
-.button-connect-wallet{
+.button-connect-wallet {
   border-radius: 80px;
-  margin:50px;
+  margin: 50px;
   background: none;
   color: #d01919;
-  border:2px solid;
+  border: 2px solid;
   padding: 1em 2em;
   font-size: 1em;
   transition: color 0.25s;
-  border-color:0.25s;
+  border-color: 0.25s;
   box-shadow: 0.25s;
   transform: 0.25s;
   width: 40vw;
 }
-.button-connect-wallet:hover{
-  border-color: #D38FF8;
+.button-connect-wallet:hover {
+  border-color: #d38ff8;
   color: white;
-  box-shadow:0 0,5em 0.5em -0.4em #D38FF8;
+  box-shadow: 0 0, 5em 0.5em -0.4em #d38ff8;
   transform: translate Y(-0.25em);
   cursor: pointer;
 }
@@ -297,19 +327,25 @@ padding: 20px;
   text-align: left;
 }
 
-
 /* //register form mdb CSS */
-
 
 body {
   /* fallback for old browsers */
   background: #a1c4fd;
 
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1));
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(161, 196, 253, 1),
+    rgba(194, 233, 251, 1)
+  );
 
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1))
+  background: linear-gradient(
+    to right,
+    rgba(161, 196, 253, 1),
+    rgba(194, 233, 251, 1)
+  );
 }
 
 .bg-indigo {

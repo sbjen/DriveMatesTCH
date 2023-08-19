@@ -33,6 +33,17 @@ contract CarpoolContract {
         return users[_userAddress].userName;
     }
 
+
+// login function will check is user a user
+    function logIn(address _userAddress, uint256 _userId)public view returns(uint256){
+        // require(users[_userAddress].userId );
+        if(users[_userAddress].userId == _userId){
+            return 1;
+        }
+
+        else return 0;
+    }
+
     event UserRegistered(address indexed userAddress, string name, string gender, uint256 id);
 
 

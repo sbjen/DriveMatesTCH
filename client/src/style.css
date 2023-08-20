@@ -157,6 +157,21 @@ body {
   background-position: center center;
 }
 
+.ride-card {
+  flex: content;
+  background-color: #0e2157;
+  border-radius: 40px;
+   margin: 30px;
+   border-color: #0e2157;
+   padding-bottom: 30px;
+   padding-top: 20px;
+  /* padding: 30px;  */
+padding-left: 50px;
+margin-right: 50px;
+/* width: fit-content; */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.9);
+}
+
 /* Reset default margin and padding for body */
 
 /* Container to center the image vertically */
@@ -192,19 +207,20 @@ html {
 
 .Home {
   width: 100vw;
-
   position: relative;
-
-  /* will change it */
-
   background-image: var(--image-gradient);
   color: aliceblue;
-
   color: aliceblue;
-  /* text-align: center;
-    vertical-align: middle;
-    align-items: center; */
 }
+
+.allign {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
 .Login-page {
   width: 100vw;
 
@@ -276,7 +292,6 @@ html {
   cursor: pointer;
 }
 
-
 .log-in-btn {
   border-radius: 50px;
   margin: 20px;
@@ -291,6 +306,33 @@ html {
   transform: 0.25s;
   width: 300px;
 }
+.ride-show-more {
+  border-radius: 10px;
+ padding-right: 50px;
+  background: none;
+  color: #5d35a3;
+  border: 2px solid;
+  padding: 1em 2em;
+  font-size: 1em;
+  transition: color 0.25s;
+  border-color: 0.25s;
+  box-shadow: 0.25s;
+  transform: 0.25s;
+  width: 150px;
+}
+.bold {
+  font-size: large;
+  font: 1em sans-serif;
+}
+
+.ride-show-more:hover {
+  border-color: #d38ff8;
+  color: white;
+  box-shadow: 0 0, 5em 0.5em -0.4em #d38ff8;
+  transform: translate Y(-0.25em);
+  cursor: pointer;
+}
+
 .log-in-btn:hover {
   border-color: #d38ff8;
   color: white;
@@ -359,4 +401,49 @@ body {
   .h-custom {
     height: 100vh !important;
   }
+}
+.take-min-height {
+  min-height: 100vh;
+}
+
+.available-rides-ride-col {
+  min-height: 100vh;
+  background-color:rgb(33,37,41);
+}
+
+
+.available-rides-deatails-col {
+  min-height: 100vh;
+  background-color: #0b2304;
+}
+.dashboard-tabs {
+  display: flex !important;
+  height: 80px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  align-self: center !important;
+
+  font-size: x-large !important;
+  color: aliceblue !important;
+  border: #d01919 !important;
+  border-block-color: red !important;
+}
+.dashboard-tabs:hover {
+  background-color: aliceblue !important;
+  color: #020c2a !important;
+}
+
+@media only screen and (max-width: 600px) {
+  #book-ride {
+    font-size: 10px;
+  }
+}
+
+#book-ride:hover {
+  background-color: rgb(3, 4, 14);
+}
+
+#book-ride:active {
+  box-shadow: none;
+  top: 5px;
 }

@@ -1,7 +1,7 @@
 import { CONTRACT_ADDRESS, ABICODE } from "../assets/constants";
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-
+import { useNavigate } from 'react-router-dom';
 import {
   MDBBtn,
   MDBContainer,
@@ -18,6 +18,8 @@ import Web3 from "web3";
 import { Contract } from "web3";
 
 function LoginPage() {
+  const navigate = useNavigate();
+  
   const [isVisible, setIsVisible] = useState(true);
   const [message, setMessage] = useState(
     "This message will disappear after 60 seconds"
@@ -33,7 +35,12 @@ function LoginPage() {
   const [contract, setContract] = useState(null);
   const [userName, setUserName] = useState("");
 
-  // metamask initialization
+
+
+
+
+
+
 
   useEffect(() => {
     const initialize = async () => {
@@ -53,6 +60,10 @@ function LoginPage() {
           console.log(`userName deteccted on Network: ${username}`);
           setUserName(username);
           setUserFound(true);
+
+
+       
+
         } catch (error) {
           console.error("Error initializing Web3:", error);
           alert(
@@ -63,9 +74,27 @@ function LoginPage() {
         console.log("Please install MetaMask!");
       }
     };
+    if(accounts.length === 0){initialize();}
 
-    initialize();
+    
   }, []);
+
+const  callMetaMask = async   (event) => {
+  event.preventDefault();
+const name = await contract.methods.getUserName(accounts[0]).call();
+if(name === userName){
+  alert("you are a user");
+  navigate('/Dashboard');
+
+}
+else{
+  alert("user Not Found Please Register First");
+}
+
+
+
+
+  }
 
   return (
     <MDBContainer fluid className="Login-page">
@@ -114,6 +143,7 @@ function LoginPage() {
                 insideText={"Call Metamask"}
                 // onClick={navigateToLogin}
                 buttonType={"log-in-btn"}
+                onClick={callMetaMask}
               />
 
               <div className="d-flex flex-row mt-3 mb-5">

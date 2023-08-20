@@ -7,7 +7,7 @@ import {
   MDBIcon,
 } from "mdb-react-ui-kit";
 import Profile from "../components/Profile";
-import RideCard from '../components/RideCard'
+import RideCard from "../components/RideCard";
 
 import React, { useState, useContext, useEffect } from "react";
 
@@ -72,26 +72,37 @@ export default function Dashboard() {
 
       <MDBTabsContent>
         <MDBTabsPane show={basicActive === "tab1"}>
-     
           <Container fluid>
             <Row>
-              <Col flex className="take-min-height available-rides-ride-col" md={4}>
-               <div>
-                <h4>Rides</h4>
-               </div>
-               <div style={{ height: '500px', overflowY: 'auto' }}>
-                <h4>Ridesfdsf Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptatum, veniam ratione similique obcaecati ipsa modi culpa necessitatibus soluta, aperiam quisquam recusandae velit hic dolores repudiandae! Aperiam eos sint alias?</h4>
-               <RideCard></RideCard>
-               <RideCard></RideCard>
+              <Col
+                flex
+                className="take-min-height available-rides-ride-col"
+                md={4}
+              >
+                <div>
+                  <h4>Rides</h4>
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
 
-               <RideCard></RideCard>
+                <div style={{ height: "90vh", overflowY: "auto" }}>
+                  <RideCard></RideCard>
+                  <RideCard></RideCard>
 
-               <RideCard></RideCard>
+                  <RideCard></RideCard>
 
-               </div>
+                  <RideCard></RideCard>
+                  <RideCard></RideCard>
+                  <RideCard></RideCard>
+                </div>
               </Col>
 
-              <Col className="take-min-height available-rides-deatails-col" md={8}>
+              <Col
+                className="take-min-height available-rides-deatails-col"
+                md={8}
+              >
                 {" "}
               </Col>
             </Row>

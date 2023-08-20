@@ -72,19 +72,14 @@ contract CarpoolContract {
         string contactNo
     );
 
-    event RideRegistered(
-        // address indexed driver,
-        // string boarding,
-        // string destination,
-        // uint16 price,
-        Ride ride
-    );
+    event RideRegistered(Ride ride);
     event RideBooked(
         address indexed passenger,
         address indexed driver,
         string destination,
         uint256 price
     );
+    event SearchRideLog(Ride[] ride);
 
     function getOwner() public view returns (address) {
         return owner;
@@ -201,11 +196,25 @@ contract CarpoolContract {
         );
 
         mapDateTimeToRideArray[_cityDateCode].push(inst);
+        users[msg.sender].userTotalRidesOffered += 1;
 
+        emit RideRegistered(mapDateTimeToRideArray[_cityDateCode][0]);
+    }
 
-        emit RideRegistered(
-            mapDateTimeToRideArray[_cityDateCode][0]
-        );
+    function searchRides(
+        string memory _cityDateCode
+    ) public returns (uint8, string memory) {
+        Ride[] memory ride = mapDateTimeToRideArray[_cityDateCode];
+        if (ride.length > 0) {
+            
+            emit SearchRideLog(ride);
+            return (1, "rides are available");
+
+        } else {
+            return (0, "rides are not available");
+        }
+
+        // Ride[] inst = Ride[];
     }
 
     //     function bookRide(address _driver) public payable {
@@ -214,10 +223,10 @@ contract CarpoolContract {
     //             "Driver is not offering a ride or already booked"
     //         );
     //         require(msg.value <= rides[_driver].price, "Insufficient payment");
-    //
+    // 
     //         rides[_driver].isAvailable = false;
     //         passengers[_driver] = true;
-    //
+    // 
     //         emit RideBooked(
     //             msg.sender,
     //             _driver,

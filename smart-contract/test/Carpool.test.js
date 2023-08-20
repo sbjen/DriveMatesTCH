@@ -26,205 +26,51 @@ contract("CarpoolContract", (accounts) => {
 
   it("--------- user register functionality ----------", async () => {
     const useAcnt = {
-      from: accounts[3],
-    };
-    await instance.registerMe(
-      "userAccount1",
-      "Male",
-      "sb7acc3@gmail.com",
-      useAcnt
-    );
-
-    await assert.equal(
-      await "userAccount1",
-      await instance.getUserName(useAcnt.from),
-      "register user mismatch check"
-    );
-
-    // await console.log(
-    //   `-----totalUsers-----${await instance.getTotalUsers()}------`
-    // );
-  });
-
-  it("---------lOGIN CHECK ACCOUNT SHOUKD BE FLAGED----------", async () => {
-    const useAcnt = {
-      from: accounts[2],
-    };
-    await instance.registerMe(
-      "userAccount1",
-      "Male",
-      "sb7acc3@gmail.com",
-      useAcnt
-    );
-    // will return contract instance
-    // const carpoolContract = await CarpoolContract.deployed();
-
-    const owner = instance.getOwner();
-    assert.equal(await owner, accounts[0], "owner account dismatch error");
-
-    assert.equal(
-      await instance.getUserName(accounts[0]),
-      "Brajendra Suman",
-      "dismatch in 1st owner"
-    );
-  });
-
-  it("---------RIde registered by logged in user ----------", async () => {
-    const useAcnt = {
-      from: accounts[4],
-    };
-    await instance.registerMe(
-      "userAccount1",
-      "Male",
-      "sb7acc3@gmail.com",
-      useAcnt
-    );
-    // will return contract instance
-    // const carpoolContract = await CarpoolContract.deployed();
-
-    const owner = instance.getOwner();
-    assert.equal(await owner, accounts[0], "owner account dismatch error");
-
-    assert.equal(
-      await instance.getUserName(accounts[0]),
-      "Brajendra Suman",
-      "dismatch in 1st owner"
-    );
-  });
-  it("---------RIDE BOOKING ----------", async () => {
-    const useAcnt = {
-      from: accounts[7],
-    };
-    await instance.registerMe(
-      "userAccount1",
-      "Male",
-      "sb7acc3@gmail.com",
-      useAcnt
-    );
-    // will return contract instance
-    // const carpoolContract = await CarpoolContract.deployed();
-
-    const owner = instance.getOwner();
-    assert.equal(await owner, accounts[0], "owner account dismatch error");
-
-    assert.equal(
-      await instance.getUserName(accounts[0]),
-      "Brajendra Suman",
-      "dismatch in 1st owner"
-    );
-  });
-  it("---------ridecancellation check----------", async () => {
-    const useAcnt = {
-      from: accounts[6],
-    };
-    await instance.registerMe(
-      "userAccount1",
-      "Male",
-      "sb7acc3@gmail.com",
-      useAcnt
-    );
-    // will return contract instance
-    // const carpoolContract = await CarpoolContract.deployed();
-
-    const owner = instance.getOwner();
-    assert.equal(await owner, accounts[0], "owner account dismatch error");
-
-    assert.equal(
-      await instance.getUserName(accounts[0]),
-      "Brajendra Suman",
-      "dismatch in 1st owner"
-    );
-  });
-
-  it("---------refund amount rollback----------", async () => {
-    const useAcnt = {
-      from: accounts[9],
-    };
-    await instance.registerMe(
-      "userAccount1",
-      "Male",
-      "sb7acc3@gmail.com",
-      useAcnt
-    );
-    // will return contract instance
-    // const carpoolContract = await CarpoolContract.deployed();
-
-    const owner = instance.getOwner();
-    assert.equal(await owner, accounts[0], "owner account dismatch error");
-
-    assert.equal(
-      await instance.getUserName(accounts[0]),
-      "Brajendra Suman",
-      "dismatch in 1st owner"
-    );
-  });
-
-  it("---------female passenger matching ----------", async () => {
-    const useAcnt = {
-      from: accounts[8],
-    };
-    await instance.registerMe(
-      "userAccount1",
-      "Male",
-      "sb7acc3@gmail.com",
-      useAcnt
-    );
-    // will return contract instance
-    // const carpoolContract = await CarpoolContract.deployed();
-
-    const owner = instance.getOwner();
-    assert.equal(await owner, accounts[0], "owner account dismatch error");
-
-    assert.equal(
-      await instance.getUserName(accounts[0]),
-      "Brajendra Suman",
-      "dismatch in 1st owner"
-    );
-  });
-
-  it("---------choosing ride of choice among lis ----------", async () => {
-    const useAcnt = {
-      from: accounts[5],
-    };
-    await instance.registerMe(
-      "userAccount1",
-      "Male",
-      "sb7acc3@gmail.com",
-      useAcnt
-    );
-    // will return contract instance
-    // const carpoolContract = await CarpoolContract.deployed();
-
-    const owner = instance.getOwner();
-    assert.equal(await owner, accounts[0], "owner account dismatch error");
-
-    assert.equal(
-      await instance.getUserName(accounts[0]),
-      "Brajendra Suman",
-      "dismatch in 1st owner"
-    );
-  });
-
-  it("---------route preference addition----------", async () => {
-    const useAcnt = {
       from: accounts[1],
     };
     await instance.registerMe(
-      "userAccount1",
+      "user 2",
       "Male",
       "sb7acc3@gmail.com",
+      "1111",
+      "assam",
       useAcnt
     );
-    // will return contract instance
-    // const carpoolContract = await CarpoolContract.deployed();
 
-    const owner = instance.getOwner();
-    assert.equal(await owner, accounts[0], "owner account dismatch error");
-
-    assert.equal(
-      await instance.getUserName(accounts[0]),
-      "Brajendra Suman",
-      "dismatch in 1st owner"
-    );
+    console.log(`-----totalUsers-----${await instance.getTotalUsers()}------`);
   });
+
+  it("--------- Registred Accound login check ----------", async () => {
+    const useAcnt = {
+      from: accounts[1],
+    };
+
+    const data = await instance.logIn(1111, useAcnt);
+    console.log("data is : ");
+    console.log(data);
+  });
+
+  it("---------RIde registered by logged in user ----------", async () => {
+
+    const useAcnt = {
+      from: accounts[1],
+    };
+
+    const tx = await instance.registerRide("guwahati", "dest: Jalukbari", " board: camous",200,7072002,3,155,255,"guwahati07072002",useAcnt);
+    
+    const logs = tx.receipt.logs;
+    console.log(`---------log---------`)
+    console.log(logs[0].args);
+
+  });
+  it("---------RIDE BOOKING ----------", async () => {});
+  it("---------ridecancellation check----------", async () => {});
+
+  it("---------refund amount rollback----------", async () => {});
+
+  it("---------female passenger matching ----------", async () => {});
+
+  it("---------choosing ride of choice among lis ----------", async () => {});
+
+  it("---------route preference addition----------", async () => {});
 });

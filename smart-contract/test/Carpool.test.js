@@ -57,13 +57,27 @@ contract("CarpoolContract", (accounts) => {
     };
 
     const tx = await instance.registerRide("guwahati", "dest: Jalukbari", " board: camous",200,7072002,3,155,255,"guwahati07072002",useAcnt);
+    await instance.registerRide("guwahati", "dest: campus", " board: Jalukbari",200,7072002,3,1155,155,"guwahati07072002",useAcnt);
     
     const logs = tx.receipt.logs;
-    console.log(`---------log---------`)
+    console.log(`---------log create ride and store in array mapped to city and time---------`)
     console.log(logs[0].args);
 
   });
-  it("---------RIDE BOOKING ----------", async () => {});
+  it("---------RIDE Search City wise ----------", async () => {
+
+    const useAcnt = {
+      from: accounts[0],
+    };
+
+    const tx = await instance.searchRides("guwahati07072002",useAcnt);
+    
+    const logs = tx.receipt.logs;
+    console.log(`---------log Search Ride city wise---------`)
+    console.log(logs[0].args[0]);
+
+
+  });
   it("---------ridecancellation check----------", async () => {});
 
   it("---------refund amount rollback----------", async () => {});

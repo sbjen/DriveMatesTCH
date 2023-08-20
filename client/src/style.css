@@ -157,6 +157,14 @@ body {
   background-position: center center;
 }
 
+.ride-card{
+  flex: content;
+  background-color: #020c2a;
+  border-radius: 100px;
+  margin: 30px;
+  padding: 10px;
+}
+
 /* Reset default margin and padding for body */
 
 /* Container to center the image vertically */
@@ -192,18 +200,10 @@ html {
 
 .Home {
   width: 100vw;
-
   position: relative;
-
-  /* will change it */
-
   background-image: var(--image-gradient);
   color: aliceblue;
-
   color: aliceblue;
-  /* text-align: center;
-    vertical-align: middle;
-    align-items: center; */
 }
 .Login-page {
   width: 100vw;
@@ -275,7 +275,6 @@ html {
   transform: translate Y(-0.25em);
   cursor: pointer;
 }
-
 
 .log-in-btn {
   border-radius: 50px;
@@ -359,4 +358,32 @@ body {
   .h-custom {
     height: 100vh !important;
   }
+}
+.take-min-height {
+  min-height: 100vh;
+}
+
+.available-rides-ride-col {
+  min-height: 100vh;
+  background-color: #405e38;
+}
+.available-rides-deatails-col {
+  min-height: 100vh;
+  background-color: #0b2304;
+}
+.dashboard-tabs {
+  display: flex !important;
+  height: 80px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  align-self: center !important;
+
+  font-size: x-large !important;
+  color: aliceblue !important;
+  border: #d01919 !important;
+  border-block-color: red !important;
+}
+.dashboard-tabs:hover {
+  background-color: aliceblue !important;
+  color: #020c2a !important;
 }

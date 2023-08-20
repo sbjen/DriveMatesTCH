@@ -1,11 +1,11 @@
-# P2P-Car-Pooling
+# Car-Pooling-web3-app
 ## Inovative solution for car pooling
 
 <!--[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)-->
 
 <!--[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)-->
 
-The P2P Blockchain Carpooling dApp revolutionizes urban transportation by harnessing the power of blockchain technology. This innovative decentralized application facilitates ride-sharing among individuals
+Carpooling dApp revolutionizes urban transportation by harnessing the power of blockchain technology. This innovative decentralized application facilitates ride-sharing among individuals
 
 ![Screenshot (110)](https://github.com/s-brajendra/P2P-Car-Pooling/assets/80635193/32c4b02e-b20b-47b4-8ae3-b0a78549805a)
 

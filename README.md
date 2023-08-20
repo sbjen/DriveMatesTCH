@@ -1,4 +1,4 @@
-# Car-Pooling-web3-app
+# DriveMatesTCH-web3-app
 ## Inovative solution for car pooling
 
 <!--[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)-->

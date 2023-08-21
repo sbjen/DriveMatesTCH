@@ -1,2 +1,1 @@
-app/* linguist-documentation=true
-app/* linguist-vendored
+smart-contract/contracts/CarpoolContract.sol Solidity

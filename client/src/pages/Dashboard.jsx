@@ -8,6 +8,7 @@ import {
 } from "mdb-react-ui-kit";
 import Profile from "../components/Profile";
 import RideCard from "../components/RideCard";
+import SearchRide from "../components/SearchRide";
 
 import React, { useState, useContext, useEffect } from "react";
 
@@ -80,7 +81,9 @@ export default function Dashboard() {
                 md={4}
               >
                 <div>
-                  <h4>Rides</h4>
+                 
+                  <SearchRide></SearchRide>
+
                 </div>
                 <br />
                 <br />
@@ -103,7 +106,13 @@ export default function Dashboard() {
                 className="take-min-height available-rides-deatails-col"
                 md={8}
               >
-                {" "}
+                <Container fluid >
+                  <Row>
+                    <Col flex>
+fdsf
+                    </Col>
+                  </Row>
+                </Container>{" "}
               </Col>
             </Row>
           </Container>

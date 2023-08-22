@@ -157,21 +157,6 @@ body {
   background-position: center center;
 }
 
-.ride-card {
-  flex: content;
-  background-color: #0e2157;
-  border-radius: 40px;
-   margin: 30px;
-   border-color: #0e2157;
-   padding-bottom: 30px;
-   padding-top: 20px;
-  /* padding: 30px;  */
-padding-left: 50px;
-margin-right: 50px;
-/* width: fit-content; */
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.9);
-}
-
 /* Reset default margin and padding for body */
 
 /* Container to center the image vertically */
@@ -218,7 +203,6 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
 .Login-page {
@@ -308,7 +292,7 @@ html {
 }
 .ride-show-more {
   border-radius: 10px;
- padding-right: 50px;
+  padding-right: 50px;
   background: none;
   color: #5d35a3;
   border: 2px solid;
@@ -408,13 +392,12 @@ body {
 
 .available-rides-ride-col {
   min-height: 100vh;
-  background-color:rgb(33,37,41);
+  background-color: #1a1e19;
 }
-
 
 .available-rides-deatails-col {
   min-height: 100vh;
-  background-color: #0b2304;
+  background-color: #1a1e19;
 }
 .dashboard-tabs {
   display: flex !important;
@@ -443,7 +426,40 @@ body {
   background-color: rgb(3, 4, 14);
 }
 
-#book-ride:active {
-  box-shadow: none;
-  top: 5px;
+.search-ride-form {
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #26272a;
+  border-radius: 30px;
+
+  border: 1px solid #e1e1e1;
+
+  box-shadow: 0px 10px 20px rgba(123, 118, 118, 0.9); /* Apply box shadow for lifting effect */
+  transition: box-shadow 0.3s ease; /* Add a transition for smooth effect */
+
+  &:hover {
+    box-shadow: 0px 15px 30px rgba(114, 31, 31, 0.2); /* Increase box shadow on hover */
+  }
+}
+
+.ride-card {
+  flex: content;
+  border: 1px solid #e1e1e1;
+  background-color: #26272a;
+
+  border-radius: 30px;
+  margin: 30px;
+
+  padding-bottom: 30px;
+  padding-top: 20px;
+  /* padding: 30px;  */
+  padding-left: 50px;
+  margin-right: 50px;
+  box-shadow: 0px 10px 20px rgba(123, 118, 118, 0.9); /* Apply box shadow for lifting effect */
+
+  /* width: fit-content; */
+
+  &:hover {
+    box-shadow: 0px 15px 30px rgba(114, 31, 31, 0.2); /* Increase box shadow on hover */
+  }
 }

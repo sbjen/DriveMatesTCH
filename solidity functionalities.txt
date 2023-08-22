@@ -1,2 +1,5 @@
 * users can register themself
 * user can register only one time by a address
+* user can Login using his password
+* userr can register ride 
+* user can search citywise all available rides will be shown available in cities

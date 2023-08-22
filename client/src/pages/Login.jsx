@@ -1,7 +1,7 @@
 import { CONTRACT_ADDRESS, ABICODE } from "../assets/constants";
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import {
   MDBBtn,
   MDBContainer,
@@ -19,14 +19,12 @@ import { Contract } from "web3";
 
 function LoginPage() {
   const navigate = useNavigate();
-  
+
   const [isVisible, setIsVisible] = useState(true);
   const [message, setMessage] = useState(
     "This message will disappear after 60 seconds"
   );
   const [dots, setDots] = useState("");
-
-
 
   const [userFound, setUserFound] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -36,12 +34,7 @@ function LoginPage() {
   const [userName, setUserName] = useState("");
 
 
-
-
-
-
-
-
+  
   useEffect(() => {
     const initialize = async () => {
       // Check if web3 is injected by the browser (Mist/MetaMask)
@@ -60,10 +53,6 @@ function LoginPage() {
           console.log(`userName deteccted on Network: ${username}`);
           setUserName(username);
           setUserFound(true);
-
-
-       
-
         } catch (error) {
           console.error("Error initializing Web3:", error);
           alert(
@@ -74,27 +63,21 @@ function LoginPage() {
         console.log("Please install MetaMask!");
       }
     };
-    if(accounts.length === 0){initialize();}
-
-    
+    if (accounts.length === 0) {
+      initialize();
+    }
   }, []);
 
-const  callMetaMask = async   (event) => {
-  event.preventDefault();
-const name = await contract.methods.getUserName(accounts[0]).call();
-if(name === userName){
-  alert("you are a user");
-  navigate('/Dashboard');
-
-}
-else{
-  alert("user Not Found Please Register First");
-}
-
-
-
-
-  }
+  const callMetaMask = async (event) => {
+    event.preventDefault();
+    const name = await contract.methods.getUserName(accounts[0]).call();
+    if (name === userName) {
+      alert("you are a user");
+      navigate("/Dashboard");
+    } else {
+      alert("user Not Found Please Register First");
+    }
+  };
 
   return (
     <MDBContainer fluid className="Login-page">

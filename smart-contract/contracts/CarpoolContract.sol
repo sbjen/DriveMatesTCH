@@ -80,6 +80,7 @@ contract CarpoolContract {
         uint256 price
     );
     event SearchRideLog(Ride[] ride);
+    event RevertOccurred(string message);
 
     function getOwner() public view returns (address) {
         return owner;

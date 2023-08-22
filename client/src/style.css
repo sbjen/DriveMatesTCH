@@ -387,11 +387,14 @@ body {
   }
 }
 .take-min-height {
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 .available-rides-ride-col {
-  min-height: 100vh;
+  align-self: center;
+  /* min-height: 100vh; */
+}
+.available-ride-section {
   background-color: #1a1e19;
 }
 
@@ -429,8 +432,10 @@ body {
 .search-ride-form {
   padding: 10px;
   margin-top: 20px;
+  margin-bottom: 20px;
   background-color: #26272a;
   border-radius: 30px;
+  width: fit-content;
 
   border: 1px solid #e1e1e1;
 
@@ -462,4 +467,45 @@ body {
   &:hover {
     box-shadow: 0px 15px 30px rgba(114, 31, 31, 0.2); /* Increase box shadow on hover */
   }
+}
+
+.green {
+  background-color: #41822f;
+}
+.red {
+  background-color: #d01919;
+}
+.yellow {
+  background-color: yellow;
+}
+.orange {
+  background-color: orange;
+}
+.grey {
+  background-color: gray;
+}
+
+.centered-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 200px; Set a specific height or adjust as needed */
+  border: 1px solid #ccc; /* Just for visualization */
+}
+.trips-cards {
+  padding-top: 20px;
+}
+
+.trip-card-div {
+  padding: 20px;
+  margin: 20px;
+  border: 10px solid white;
+  border-radius: 20px;
+}
+
+.search-ride-div {
+  padding: 20px;
+  margin: 20px;
+  border: 10px solid white;
+  border-radius: 20px;
 }

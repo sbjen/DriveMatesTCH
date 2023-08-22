@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SearchRide from "../components/SearchRide";
 import RideCard from "../components/RideCard";
+import RegisterRideForm from "../components/RegisterRideForm";
 import { Col, Container, Row } from "react-bootstrap";
 import {
   MDBTabs,
@@ -157,15 +158,12 @@ export default function Dashboard() {
       </MDBTabs>
 
       <MDBTabsContent>
+        {/* available ride tab ofdashboard */}
         <MDBTabsPane show={basicActive === "tab1"}>
-          <Container fluid>
-            <Row>
-              <Col
-                flex
-                className="take-min-height available-rides-ride-col"
-                md={4}
-              >
-                <div>
+          <Container fluid className="available-ride-section">
+            <Row className="align-items-center red">
+              <Col className=" text-center take-min-heigt available-rides-ride-col green">
+                <div className="yellow centered-div search-ride-div">
                   <SearchRide
                     onSubmit={handleSubmit}
                     city={searchFormData.city}
@@ -175,12 +173,15 @@ export default function Dashboard() {
                     handleInputChange={handleInputChange}
                   ></SearchRide>
                 </div>
-                <br />
-                <br />
-                <br />
-                <br />
+              </Col>
+            </Row>
 
-                <div style={{ height: "90vh", overflowY: "auto" }}>
+            <Row className="trips-cards orange">
+              <Col className="grey trip-card-col">
+                <div
+                  className="yellow trip-card-div"
+                  style={{ height: "90vh", overflowY: "auto" }}
+                >
                   <RideCard></RideCard>
                   <RideCard></RideCard>
                   <RideCard></RideCard>
@@ -189,7 +190,8 @@ export default function Dashboard() {
                   <RideCard></RideCard>
                 </div>
               </Col>
-
+            </Row>
+            <Row>
               <Col
                 className="take-min-height available-rides-deatails-col"
                 md={8}
@@ -203,7 +205,24 @@ export default function Dashboard() {
             </Row>
           </Container>
         </MDBTabsPane>
-        <MDBTabsPane show={basicActive === "tab2"}>Tab 2 content</MDBTabsPane>
+
+        {/* register ride tab of dashboard */}
+
+        <MDBTabsPane show={basicActive === "tab2"}>
+          <Container fluid className="available-ride-section">
+            <Row className="align-items-center red">
+              <Col className=" text-center take-min-heigt available-rides-ride-col green">
+                <div className="yellow centered-div search-ride-div">
+<RegisterRideForm>
+  
+</RegisterRideForm>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </MDBTabsPane>
+
+        {/* profile tab of dashboard */}
         <MDBTabsPane show={basicActive === "tab3"}>Tab 3 content</MDBTabsPane>
       </MDBTabsContent>
     </>

@@ -102,8 +102,8 @@ npm install --save-dev @nomicfoundation/hardhat-toolbox
 sb7
 
 **VISIT ME ON** 
--  [Poertfolio Website][link_portfolio]
--  [Link Tree][link_tree]
+-  [Poertfolio Website][[link_portfolio](https://master--sbrajen7.netlify.app/)]
+-  [Link Tree][[link_tree](https://linktr.ee/sbrajen07)]
 
 
 [link_node]: <http://nodejs.org>

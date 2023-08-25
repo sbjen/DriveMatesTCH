@@ -102,8 +102,8 @@ npm install --save-dev @nomicfoundation/hardhat-toolbox
 sb7
 
 **VISIT ME ON** 
--  [Poertfolio Website][https://master--sbrajen7.netlify.app/]
--  [Link Tree][https://linktr.ee/sbrajen07]
+-  [Poertfolio Website][link_portfolio]
+-  [Link Tree][link_tree]
 
 
 [link_node]: <http://nodejs.org>
@@ -116,5 +116,5 @@ sb7
 [link_ganache]:<>
 [link_metamask]:<>
 [link_ganache_download]: <https://trufflesuite.com/ganache/>
-[link_portfolio]:<>
-[link_tree]:<>
+[link_portfolio]:<https://master--sbrajen7.netlify.app/>
+[link_tree]:<https://linktr.ee/sbrajen07>

@@ -5,42 +5,40 @@ import Row from "react-bootstrap/Row";
 
 export default function RegisterRideForm({
   onSubmit,
-  firstName,
-  lastName,
+  boarding,
+  destination,
   city,
-  contactNo,
+  price,
   gender,
   handleInputChange,
-  password,
+  Date,
 }) {
   return (
     <Form className="search-ride-form " onSubmit={onSubmit}>
       <h4 style={{ marginBottom: "30px", marginTop: "30px" }}>
         {" "}
-        Search Available Rides
+        Register Ride
       </h4>
       <Row className="mb-4">
-        <Form.Group as={Col} controlId="firstName">
-          <Form.Label>First Name</Form.Label>
+        <Form.Group as={Col} controlId="boarding">
+          <Form.Label>Borading Point</Form.Label>
           <Form.Control
-            placeholder="01"
             type="text"
-            name="firstName"
-            value={firstName}
+            name="boarding"
+            value={boarding}
             onChange={handleInputChange}
-            defaultValue="Brajendra"
+            placeholder="Jalukbari"
             required
           />
         </Form.Group>
-        <Form.Group as={Col} controlId="lastName">
-          <Form.Label>Last Name</Form.Label>
+        <Form.Group as={Col} controlId="destination">
+          <Form.Label>Destination</Form.Label>
           <Form.Control
-            placeholder="01"
             type="text"
-            name="lastName"
-            value={lastName}
+            name="destination"
+            value={destination}
             onChange={handleInputChange}
-            defaultValue="Suman acc2"
+            placeholder="Campus"
             required
           />
         </Form.Group>
@@ -66,13 +64,13 @@ export default function RegisterRideForm({
           </Form.Select>
         </Form.Group>
 
-        <Form.Group as={Col} controlId="contactNo">
-          <Form.Label>Contact No</Form.Label>
+        <Form.Group as={Col} controlId="price">
+          <Form.Label>Cost</Form.Label>
           <Form.Control
-            placeholder="9887275"
+            placeholder=""
             type="number"
-            name="contactNo"
-            value={contactNo}
+            name="price"
+            value={price}
             onChange={handleInputChange}
             defaultValue={98872752}
             required
@@ -99,13 +97,13 @@ export default function RegisterRideForm({
       <Form.Group className="mb-4" controlId="city"></Form.Group>
 
       <Row className="mb-4">
-        <Form.Group as={Col} controlId="password">
-          <Form.Label>Password</Form.Label>
+        <Form.Group as={Col} controlId="Date">
+          <Form.Label>Date</Form.Label>
           <Form.Control
-            placeholder="01"
-            name="password"
-            type="number"
-            value={password}
+            // placeholder="01"
+            name="Date"
+            type="Date"
+            value={Date}
             defaultValue="07"
             onChange={handleInputChange}
             required

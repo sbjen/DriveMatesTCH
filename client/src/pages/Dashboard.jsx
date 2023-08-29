@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SearchRide from "../components/SearchRide";
 import RideCard from "../components/RideCard";
+import RegisterRideForm from "../components/RegisterRideForm";
 import { Col, Container, Row } from "react-bootstrap";
 import {
   MDBTabs,
@@ -24,11 +25,23 @@ export default function Dashboard() {
   const [web3, setWeb3] = useState(null);
   const [userName, setUserName] = useState("");
   const [userFound, setUserFound] = useState(false);
+
   const [searchFormData, setSearchFormData] = useState({
     city: "",
     day: "",
     month: "",
     year: "",
+  });
+
+  const [registerRideFormData, setRegisterRideFormData] = useState({
+    onSubmit: "",
+    boarding: "",
+    destination: "",
+    city: "",
+    price: "",
+    gender: "",
+    handleInputChange: "",
+    date: "",
   });
 
   // checking metamask metamask interface instance
@@ -69,24 +82,57 @@ export default function Dashboard() {
 
   // serach ride function
   const searchRides = async (contract) => {
-    console.log(contract);
-    let CITY_DATE_CODE =
-      searchFormData.city.toLowerCase() +
-      searchFormData.day +
-      searchFormData.month +
-      searchFormData.year;
-    console.log(CITY_DATE_CODE);
-    const tx = await contract.methods
-      .searchRides("guwahati07072002")
-      .send({ from: accounts[0] });
+    try {
+      console.log(contract);
+      let CITY_DATE_CODE =
+        searchFormData.city.toLowerCase() +
+        searchFormData.day +
+        searchFormData.month +
+        searchFormData.year;
+      console.log(CITY_DATE_CODE);
+      // calling on static input will change it
+      const tx = await contract.methods
+        .searchRides("guwahati07072002")
+        .send({ from: accounts[0] });
 
-    // call transaction doesnt return reciept so cant get events from it
+      // call transaction doesnt return reciept so cant get events from it
 
-    const events = tx;
-    const RIDES_IN_CITY = [];
+      const receipt = await web3.eth.getTransactionReceipt(tx.transactionHash);
 
-    console.log("-------------events--------------");
-    console.log(events);
+      // Extract logs from the receipt
+      const logs = receipt.logs;
+      console.log("-------------logs--------------");
+      console.log(logs); // Display logs in console
+    } catch (error) {
+      alert("error in searching rides");
+      console.log(error);
+    }
+  };
+
+
+  const RegisterRide = async (contract) => {
+    try {
+      const tx = await contract.methods.registerRide(
+        registerRideFormData.city,
+        registerRideFormData.destination,
+        registerRideFormData.boarding,
+        registerRideFormData.price,
+        7072002,
+        3,
+        12,
+        16,
+        "guwahati07072002",
+        ).send({ from: accounts[0] });
+
+        console.log("-------------logs of ride register--------------");
+        console.log(tx); // Display logs in console
+
+      console.log("working");
+     
+    } catch (error) {
+      alert("error Registering ride");
+      console.log(error);
+    }
   };
 
   const handleBasicClick = (value) => {
@@ -118,6 +164,26 @@ export default function Dashboard() {
     console.log("Form data submitted:", searchFormData);
     searchRides(contract);
     // loading all rides
+  };
+
+  // register form handling
+  const handleRegisterRideFormInputChange = (event) => {
+    const { name, value } = event.target;
+    setRegisterRideFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleRegisterRideFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log("Register ride Form data submitted:", registerRideFormData);
+
+    console.log("register ride submit clicked");
+    RegisterRide(contract);
+
+    // data is being retreaved in object lets call
+
   };
 
   // <i class="fas fa-car-side"></i>;
@@ -157,15 +223,12 @@ export default function Dashboard() {
       </MDBTabs>
 
       <MDBTabsContent>
+        {/* available ride tab ofdashboard */}
         <MDBTabsPane show={basicActive === "tab1"}>
-          <Container fluid>
-            <Row>
-              <Col
-                flex
-                className="take-min-height available-rides-ride-col"
-                md={4}
-              >
-                <div>
+          <Container fluid className="available-ride-section">
+            <Row className="align-items-center red">
+              <Col className=" text-center take-min-heigt available-rides-ride-col green">
+                <div className="yellow centered-div search-ride-div">
                   <SearchRide
                     onSubmit={handleSubmit}
                     city={searchFormData.city}
@@ -175,12 +238,15 @@ export default function Dashboard() {
                     handleInputChange={handleInputChange}
                   ></SearchRide>
                 </div>
-                <br />
-                <br />
-                <br />
-                <br />
+              </Col>
+            </Row>
 
-                <div style={{ height: "90vh", overflowY: "auto" }}>
+            <Row className="trips-cards orange">
+              <Col className="grey trip-card-col">
+                <div
+                  className="yellow trip-card-div"
+                  style={{ height: "90vh", overflowY: "auto" }}
+                >
                   <RideCard></RideCard>
                   <RideCard></RideCard>
                   <RideCard></RideCard>
@@ -189,7 +255,8 @@ export default function Dashboard() {
                   <RideCard></RideCard>
                 </div>
               </Col>
-
+            </Row>
+            <Row>
               <Col
                 className="take-min-height available-rides-deatails-col"
                 md={8}
@@ -203,7 +270,33 @@ export default function Dashboard() {
             </Row>
           </Container>
         </MDBTabsPane>
-        <MDBTabsPane show={basicActive === "tab2"}>Tab 2 content</MDBTabsPane>
+
+        {/* register ride tab of dashboard */}
+
+        <MDBTabsPane show={basicActive === "tab2"}>
+          <Container fluid className="available-ride-section">
+            <Row className="align-items-center red">
+              <Col className=" text-center take-min-heigt available-rides-ride-col green">
+                <div className="yellow centered-div search-ride-div">
+                  <RegisterRideForm
+                    onSubmit={handleRegisterRideFormSubmit}
+                    boarding={registerRideFormData.boarding}
+                    destination={registerRideFormData.destination}
+                    city={registerRideFormData.city}
+                    price={registerRideFormData.price}
+                    gender={registerRideFormData.gender}
+                    handleInputChange={handleRegisterRideFormInputChange}
+                    date={registerRideFormData.date}
+                  >
+                    {" "}
+                  </RegisterRideForm>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </MDBTabsPane>
+
+        {/* profile tab of dashboard */}
         <MDBTabsPane show={basicActive === "tab3"}>Tab 3 content</MDBTabsPane>
       </MDBTabsContent>
     </>

@@ -52,6 +52,7 @@ Install the frontend dependencies in client forder
 
 ```sh
 cd client
+npm install
 npm start
 ```
 

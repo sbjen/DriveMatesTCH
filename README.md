@@ -1,5 +1,5 @@
-# DriveMatesTCH-web3-app
-## Inovative solution for car pooling
+### DriveMatesTCH-web3-app
+### Inovative solution for car pooling
 [![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fs-brajendra%2FDriveMatesTCH&label=VISITOR&countColor=%23263759&style=flat-square)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fs-brajendra%2FDriveMatesTCH)
 
 <!--[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)-->
@@ -13,7 +13,7 @@ Carpooling dApp revolutionizes urban transportation by harnessing the power of b
 
 
 
-## Features
+### Features
 
 
 - users can register themself
@@ -29,7 +29,7 @@ Carpooling dApp revolutionizes urban transportation by harnessing the power of b
 
 
 
-## Tech Used
+### Tech Used
 
 Tools and Technology Used:
 
@@ -44,7 +44,7 @@ Tools and Technology Used:
 - [MetaMask][link_metamask] - MetaMask is a browser extension enabling secure interaction with Ethereum applications directly from your browser.
 
 
-## Installation
+### Installation
 
 Project requires [Node.js](https://nodejs.org/) v18+ to run.
 
@@ -78,7 +78,7 @@ npm install --save-dev @nomicfoundation/hardhat-toolbox
 
 ```
 
-<!--## Plugins-->
+<!--### Plugins-->
 
 <!--Dillinger is currently extended with the following plugins.-->
 <!--Instructions on how to use them in your own application are linked below.-->
@@ -93,8 +93,7 @@ npm install --save-dev @nomicfoundation/hardhat-toolbox
 
 
 
-## License
-sb7
+
 
 **VISIT ME ON** 
 -  [Poertfolio Website][link_portfolio]
